@@ -1,0 +1,14 @@
+# خطوات توليد ملف EXE للتطبيق
+
+1. تأكد من تثبيت Python 3.10.11 على جهازك.
+2. ثبّت PyInstaller:
+   pip install pyinstaller
+3. شغّل الأمر التالي داخل مجلد المشروع:
+   pyinstaller --onefile --noconsole ai_video_studio_app.py
+4. بعد انتهاء العملية، ستجد الملف التنفيذي في مجلد dist باسم ai_video_studio_app.exe
+5. انسخ مجلدات الموارد (audio_library, videos, إلخ) بجانب ملف EXE.
+6. شغّل ai_video_studio_app.exe وسيعمل التطبيق مباشرة كبرنامج مستقل.
+
+> إذا أردت تضمين الموارد تلقائياً داخل EXE، استخدم خيار --add-data مع PyInstaller:
+> pyinstaller --onefile --noconsole --add-data "audio_library;audio_library" --add-data "videos;videos" ai_video_studio_app.py
+
